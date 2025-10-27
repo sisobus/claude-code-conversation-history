@@ -17,7 +17,7 @@ NC='\033[0m' # No Color
 
 # Configuration
 HOMEBREW_TAP_PATH="../homebrew-tap"
-FORMULA_FILE="$HOMEBREW_TAP_PATH/Formula/claude-history.rb"
+FORMULA_FILE="$HOMEBREW_TAP_PATH/Formula/cchistory.rb"
 SCRIPT_NAME="claude-history.py"
 REPO_NAME="claude-code-conversation-history"
 GITHUB_USER="sisobus"
@@ -159,16 +159,16 @@ print_step "Updating homebrew-tap Formula..."
 cd "$HOMEBREW_TAP_PATH"
 
 # Update Formula file
-sed -i '' "s|url \"https://github.com/$GITHUB_USER/$REPO_NAME/archive/refs/tags/v.*\.tar\.gz\"|url \"$TARBALL_URL\"|" Formula/claude-history.rb
-sed -i '' "s|sha256 \"[a-f0-9]*\"|sha256 \"$SHA256\"|" Formula/claude-history.rb
-sed -i '' "s|version \".*\"|version \"$VERSION\"|" Formula/claude-history.rb
+sed -i '' "s|url \"https://github.com/$GITHUB_USER/$REPO_NAME/archive/refs/tags/v.*\.tar\.gz\"|url \"$TARBALL_URL\"|" Formula/cchistory.rb
+sed -i '' "s|sha256 \"[a-f0-9]*\"|sha256 \"$SHA256\"|" Formula/cchistory.rb
+sed -i '' "s|version \".*\"|version \"$VERSION\"|" Formula/cchistory.rb
 
 print_success "Formula updated"
 
 # Step 7: Commit and push homebrew-tap
 print_step "Committing homebrew-tap changes..."
-git add Formula/claude-history.rb
-git commit -m "Update claude-history to v$VERSION
+git add Formula/cchistory.rb
+git commit -m "Update cchistory to v$VERSION
 
 $COMMIT_MESSAGE"
 
@@ -187,14 +187,14 @@ echo -e "${GREEN}${BOLD}========================================${NC}"
 echo ""
 echo -e "${CYAN}Users can now install/update with:${NC}"
 echo "  brew update"
-echo "  brew upgrade claude-history"
+echo "  brew upgrade cchistory"
 echo ""
 echo -e "${CYAN}Or fresh install:${NC}"
 echo "  brew tap sisobus/tap"
-echo "  brew install claude-history"
+echo "  brew install cchistory"
 echo ""
 echo -e "${CYAN}Test the new version:${NC}"
-echo "  cchistory --version  # Should show: claude-history version $VERSION"
+echo "  cchistory --version  # Should show: cchistory version $VERSION"
 echo ""
 echo -e "${CYAN}GitHub Release:${NC}"
 echo "  https://github.com/$GITHUB_USER/$REPO_NAME/releases/tag/v$VERSION"
