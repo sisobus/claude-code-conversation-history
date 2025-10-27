@@ -30,7 +30,7 @@ class Colors:
 
 # Constants
 CLAUDE_DIR = Path.home() / ".claude" / "projects"
-VERSION = "1.0.1"
+VERSION = "1.0.2"
 
 
 class InteractiveMenu:
